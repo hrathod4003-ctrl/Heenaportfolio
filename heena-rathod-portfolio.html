@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Heena Rathod – Salesforce Administrator &amp; Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F7F4FF;--surface:#fff;--ink:#241B4D;--muted:#5E5984;--line:#DDD6F5;--blue:#4F46E5;--blue-soft:#E8E5FF;--amber:#FFB020;--green:#12A877;--hl:#FFF0C2;--pink:#FF4F9A;--teal:#00B8A9;--coral:#FF6B4A;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#150F2E;--surface:#211A45;--ink:#F4F0FF;--muted:#BAB4E0;--line:#3B3274;--blue:#9A9BFF;--blue-soft:#2D2670;--amber:#FFC24D;--green:#3EDCB0;--hl:#4A3A10;--pink:#FF7AB6;--teal:#2EE0CF;--coral:#FF8A6B;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#150F2E;--surface:#211A45;--ink:#F4F0FF;--muted:#BAB4E0;--line:#3B3274;--blue:#9A9BFF;--blue-soft:#2D2670;--amber:#FFC24D;--green:#3EDCB0;--hl:#4A3A10;--pink:#FF7AB6;--teal:#2EE0CF;--coral:#FF8A6B;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 92% -4%,color-mix(in srgb,var(--pink) 28%,transparent),transparent 42%),radial-gradient(circle at -6% 22%,color-mix(in srgb,var(--teal) 24%,transparent),transparent 40%),radial-gradient(circle at 80% 60%,color-mix(in srgb,var(--amber) 14%,transparent),transparent 35%),var(--bg);color:var(--ink);font:400 17px/1.6 "Public Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","Public Sans",sans-serif;line-height:1.1;margin:0}
+a{color:var(--blue)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+nav{display:flex;gap:18px;align-items:center;justify-content:space-between;padding:18px 0;flex-wrap:wrap}
+nav b{font-family:"Bricolage Grotesque",sans-serif;font-size:20px}
+nav div{display:flex;gap:18px;flex-wrap:wrap;font-size:15px}
+nav a{color:var(--muted);text-decoration:none}nav a:hover{color:var(--ink)}
+.hero{padding:44px 0 56px;display:grid;grid-template-columns:1.05fr 1fr;gap:36px;align-items:center}
+.hero h1{font-size:clamp(40px,6.4vw,70px);font-weight:800;letter-spacing:-.02em;background:linear-gradient(100deg,var(--blue),var(--pink) 60%,var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.08em}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:34em;margin:20px 0 26px}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 20px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--blue)}
+.btn.p{background:linear-gradient(100deg,var(--blue),var(--pink));border-color:transparent;color:#fff}.btn.s{border-color:var(--pink)}.btn.s{color:var(--blue)}
+:root[data-theme="dark"] .btn.p{color:#08213D}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{color:#08213D}}
+.flow{background:var(--surface);border:2px solid var(--ink);border-radius:18px;padding:18px;box-shadow:9px 9px 0 var(--pink)}
+.flow svg{width:100%;height:auto;display:block}
+.flow small{display:block;color:var(--muted);font-size:13px;margin-top:8px}
+.node rect{fill:var(--blue-soft);stroke:var(--blue);stroke-width:2}.node:nth-of-type(2) rect{fill:color-mix(in srgb,var(--pink) 20%,var(--surface));stroke:var(--pink)}.node:nth-of-type(3) rect{fill:color-mix(in srgb,var(--amber) 28%,var(--surface));stroke:var(--amber)}.node:nth-of-type(4) rect{fill:color-mix(in srgb,var(--teal) 22%,var(--surface));stroke:var(--teal)}.node:nth-of-type(5) rect{fill:color-mix(in srgb,var(--green) 22%,var(--surface));stroke:var(--green)}
+.node text{fill:var(--ink);font:600 13px "Public Sans",sans-serif;text-anchor:middle}
+.edge{stroke:var(--line);stroke-width:2.5;fill:none}
+.pulse{stroke:var(--amber);stroke-width:3;fill:none;stroke-dasharray:14 400;stroke-linecap:round;animation:run 4.2s linear infinite}
+@keyframes run{from{stroke-dashoffset:60}to{stroke-dashoffset:-420}}
+section{padding:56px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(28px,4vw,40px);margin-bottom:8px;letter-spacing:-.01em}section>.wrap>h2::after{content:"";display:block;width:70px;height:7px;border-radius:9px;background:linear-gradient(90deg,var(--pink),var(--amber),var(--teal));margin-top:10px}
+.sub{color:var(--muted);max-width:40em;margin:0 0 28px}
+.cases{display:grid;gap:18px}
+.case{background:var(--surface);border:1px solid var(--line);border-top:9px solid var(--c,var(--blue));border-radius:16px;padding:24px;display:grid;grid-template-columns:.9fr 1.6fr;gap:22px}.case:nth-child(2){--c:var(--pink)}.case:nth-child(3){--c:var(--teal)}.case dt{color:var(--c,var(--blue))}
+.case h3{font-size:24px}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.tags span{font-size:13px;font-weight:600;padding:3px 10px;border-radius:99px;background:color-mix(in srgb,var(--c,var(--blue)) 16%,transparent);border:1px solid var(--c,var(--blue));color:var(--ink)}
+.case dl{margin:0;display:grid;gap:10px}
+.case dt{font-weight:600;font-size:15px}.case dd{margin:0;color:var(--muted)}
+.demo{background:var(--surface);border:2px solid var(--ink);border-radius:16px;padding:24px;box-shadow:8px 8px 0 var(--teal)}#fit .demo{box-shadow:8px 8px 0 var(--amber)}
+.ctrl{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:22px}
+label{display:block;font-weight:600;font-size:15px;margin-bottom:6px}
+label output{color:var(--blue)}
+input[type=range]{width:100%;accent-color:var(--blue)}
+.chain{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.step{padding:10px 14px;border-radius:10px;border:2px solid var(--line);color:var(--muted);font-weight:600;font-size:15px;transition:all .3s}
+.step.on{border-color:var(--amber);background:var(--hl);color:var(--ink)}
+.step.ok{border-color:var(--green);color:var(--green)}
+.arrow{color:var(--line);font-weight:700}
+#verdict{margin:16px 0 0;font-weight:500}
+textarea{width:100%;min-height:130px;border:1px solid var(--line);border-radius:10px;padding:12px;background:var(--bg);color:var(--ink);font:inherit;resize:vertical}
+.match{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:5px 12px;border-radius:99px;border:1px solid var(--line);font-size:14px;color:var(--muted)}
+.chip.hit{background:var(--hl);border-color:var(--amber);color:var(--ink);font-weight:600}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden;margin:14px 0 4px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--green),var(--amber));transition:width .5s}
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 28px}
+.skills div{padding:14px 16px;background:var(--surface);border-left:7px solid var(--c,var(--blue));border-radius:10px}.skills div:nth-child(4n+2){--c:var(--pink)}.skills div:nth-child(4n+3){--c:var(--teal)}.skills div:nth-child(4n+4){--c:var(--amber)}
+.skills b{display:block;margin-bottom:2px}.skills span{color:var(--muted);font-size:15px}
+.job{display:grid;grid-template-columns:150px 1fr;gap:18px;padding:20px 0;border-bottom:1px solid var(--line)}
+.job time{color:var(--muted);font-size:15px}
+.job h3{font-size:21px}.job em{color:var(--muted);font-style:normal}
+.job ul{margin:10px 0 0;padding-left:20px;color:var(--muted)}
+.certs{display:flex;gap:12px;flex-wrap:wrap}
+.certs div{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--blue);border-radius:10px;padding:14px 18px;font-weight:600}
+footer{padding:56px 0 76px;background:linear-gradient(120deg,#4F46E5,#FF4F9A 70%,#FF6B4A);color:#fff}footer .btn.p{background:#fff;color:#4F46E5;border-color:#fff}footer .btn.s{color:#fff;border-color:#fff}footer p{color:#fff!important}.certs div:nth-child(2){border-left-color:var(--pink)}.certs div:nth-child(3){border-left-color:var(--teal)}
+footer h2{font-size:clamp(30px,5vw,48px);margin-bottom:16px}
+.theme{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:4px 10px;cursor:pointer;font:inherit;font-size:14px}
+@media (max-width:780px){.hero,.case,.ctrl,.skills,.job{grid-template-columns:1fr}.job{gap:4px}}
+@media (prefers-reduced-motion:reduce){.pulse{animation:none}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Heena Rathod</b><div><button class="theme" id="theme" aria-label="Switch light or dark theme">Theme</button></div></nav>
+
+<header class="hero">
+<div>
+<h1>Salesforce admin who also builds.</h1>
+<p class="lead">I’m a Salesforce Administrator and Developer with 8 years across Sales Cloud, Service Cloud and CPQ. I use Flow first, write Apex and LWC when Flow can’t do the job, and ship releases with Copado and SFDX.</p>
+<div class="btns"><a class="btn p" href="mailto:hrathod4003@gmail.com">Email me</a><a class="btn s" href="https://linkedin.com/in/heena-rathod">LinkedIn</a><a class="btn s" href="#demo">Try the demos</a></div>
+</div>
+<div class="flow" aria-label="Diagram of an automated Salesforce flow from quote to closed deal">
+<svg viewBox="0 0 440 250" role="img" aria-hidden="true">
+<path class="edge" d="M80 55 H220 M220 55 V125 M220 125 H360 M360 125 V195 M360 195 H220"/>
+<path class="pulse" d="M80 55 H220 V125 H360 V195 H220"/>
+<g class="node"><rect x="20" y="35" width="120" height="40" rx="10"/><text x="80" y="60">Quote created</text></g>
+<g class="node"><rect x="160" y="105" width="120" height="40" rx="10"/><text x="220" y="130">Flow checks rules</text></g>
+<g class="node"><rect x="300" y="105" width="120" height="40" rx="10"/><text x="360" y="130">Approval</text></g>
+<g class="node"><rect x="300" y="175" width="120" height="40" rx="10"/><text x="360" y="200">DocuSign</text></g>
+<g class="node"><rect x="160" y="175" width="120" height="40" rx="10"/><text x="220" y="200">Closed won</text></g>
+</svg>
+<small>The quote-to-cash path I’ve built and supported at TEN Canada.</small>
+</div>
+</header>
+</div>
+
+<section id="work"><div class="wrap">
+<h2>Project work</h2>
+<p class="sub">Three Salesforce CPQ projects from my time at TEN Canada, each with the problem, what I did, and how it turned out.</p>
+<div class="cases">
+<article class="case"><div><h3>CPQ credit approval</h3><div class="tags"><span>Salesforce CPQ</span><span>Approval processes</span><span>Flow</span></div></div>
+<dl><div><dt>Problem</dt><dd>Quotes for customers on credit had to be checked by Finance before they went out, and the check happened by email with no clear record of who approved what.</dd></div>
+<div><dt>What I did</dt><dd>Built a multi-level credit approval in CPQ. Rules check the customer’s credit position and the quote value, then route to the right approver, send email alerts and keep the quote on hold until approved.</dd></div>
+<div><dt>Result</dt><dd>Credit checks now happen inside the quote with a full approval history, so Sales and Finance spend less time chasing each other.</dd></div></dl></article>
+
+<article class="case"><div><h3>CPQ product configuration, renewals and amendments</h3><div class="tags"><span>Product bundles</span><span>Pricing rules</span><span>Renewals</span><span>Amendments</span><span>Upsell and downsell</span></div></div>
+<dl><div><dt>Problem</dt><dd>Changing a customer’s contract mid-term, or renewing it, was done by hand. Price increases, upsells and downsells had to be worked out manually, which caused errors and rework.</dd></div>
+<div><dt>What I did</dt><dd>Configured products and bundles with pricing rules and discount schedules. Built the renewal and amendment process in CPQ so the system calculates the new price, applies the renewal price increase, and handles upsell (adding products) and downsell (removing or reducing products) on the existing contract. Added quote templates and DocuSign for signing.</dd></div>
+<div><dt>Result</dt><dd>Renewals and amendments are priced consistently from the contract, with less manual calculation and rework for Sales.</dd></div></dl></article>
+
+<article class="case"><div><h3>Case management for online credit cases</h3><div class="tags"><span>Service Cloud</span><span>Web-to-Case</span><span>Queues</span><span>Flow</span></div></div>
+<dl><div><dt>Problem</dt><dd>Credit requests that came in online were handled outside Salesforce, so cases were slow to route and hard to track against the related quote.</dd></div>
+<div><dt>What I did</dt><dd>Set up case management in Service Cloud for online credit cases: intake through Web-to-Case, a dedicated record type, queues and assignment rules, status flow and email alerts, linked to the customer and the CPQ quote.</dd></div>
+<div><dt>Result</dt><dd>Credit cases are routed to the right team on arrival and tracked in one place, so the credit team and Sales can see the same status.</dd></div></dl></article>
+</div></div></section>
+
+<section id="demo"><div class="wrap">
+<h2>Live demo: quote approval routing</h2>
+<p class="sub">A small model of the multi-level approvals I configure in CPQ. Move the sliders and watch who has to sign off. The thresholds here are examples, not a client’s real rules.</p>
+<div class="demo">
+<div class="ctrl">
+<div><label for="amt">Deal size: <output id="amtO"></output></label><input id="amt" type="range" min="5000" max="500000" step="5000" value="60000"></div>
+<div><label for="dis">Discount: <output id="disO"></output></label><input id="dis" type="range" min="0" max="40" step="1" value="12"></div>
+</div>
+<div class="chain" id="chain" aria-live="polite"></div>
+<p id="verdict"></p>
+</div></div></section>
+
+<section id="fit"><div class="wrap">
+<h2>Check how I fit your role</h2>
+<p class="sub">Paste a job description. The page highlights the skills from my résumé that match, right in your browser. Nothing is sent anywhere.</p>
+<div class="demo">
+<label for="jd">Job description</label>
+<textarea id="jd" placeholder="Paste a Salesforce job posting here…"></textarea>
+<div class="bar"><i id="barfill"></i></div>
+<div id="score" aria-live="polite">Paste a posting to see the match.</div>
+<div class="match" id="chips"></div>
+</div></div></section>
+
+<section><div class="wrap">
+<h2>Skills</h2><p class="sub">&nbsp;</p>
+<div class="skills">
+<div><b>Administration</b><span>Users, profiles, roles, permission sets, sharing rules, org-wide defaults, record types, validation rules, sandboxes</span></div>
+<div><b>Automation</b><span>Flow Builder, Flow Orchestration, approval processes, Workflow Rules, Process Builder</span></div>
+<div><b>Salesforce CPQ</b><span>Product bundles, pricing rules, discount schedules, quote templates, approval workflows</span></div>
+<div><b>Development</b><span>Apex, SOQL, Lightning Web Components, Visualforce</span></div>
+<div><b>DevOps and release</b><span>Copado, Salesforce DX, Git, GitHub, change sets, CI/CD, UAT</span></div>
+<div><b>Integrations</b><span>Salesforce Connect, REST and SOAP APIs, Outreach, Gong, ZoomInfo, DocuSign, Mavenlink, Data Cloud</span></div>
+<div><b>Data</b><span>Data Loader, Workbench, ETL tools, cleansing, mapping, validation</span></div>
+<div><b>Reporting and ways of working</b><span>Custom reports, dashboards, Einstein Analytics, Jira, Confluence, Agile, documentation, user training</span></div>
+</div></div></section>
+
+<section id="exp"><div class="wrap">
+<h2>Experience</h2><p class="sub">&nbsp;</p>
+<div class="job"><time>Jan 2021 – Present</time><div><h3>Salesforce Administrator / Developer</h3><em>TEN Canada, Toronto</em><ul><li>Administer Sales Cloud, Service Cloud and CPQ, including security and access control.</li><li>Gather requirements from Sales, Finance and Support, then work with developers to deliver.</li><li>Support integrations with Outreach, Gong, ZoomInfo, DocuSign and Mavenlink.</li><li>Built executive dashboards, reports and KPIs for leadership and operations teams.</li></ul></div></div>
+<div class="job"><time>Jan 2019 – Dec 2020</time><div><h3>Salesforce Administrator</h3><em>GFL Environmental, Toronto</em><ul><li>Set up Web-to-Case and Email-to-Case to improve case intake and routing.</li><li>Migrated legacy CRM data with Data Loader and ETL tools, with validation checks.</li><li>Trained users and documented processes, which raised adoption and cut repeat support requests.</li></ul></div></div>
+<div class="job"><time>Jan 2017 – Dec 2018</time><div><h3>Salesforce Analyst</h3><em>MCCG 3</em><ul><li>Configured custom objects, fields, layouts and security from business requirements.</li><li>Built automation with Workflow Rules, Process Builder and approvals.</li></ul></div></div>
+<h3 style="margin:34px 0 14px">Certifications</h3>
+<div class="certs"><div>Salesforce Certified Administrator</div><div>Platform Developer I</div><div>Revenue Management Consultant</div></div>
+<p style="color:var(--muted);margin-top:22px">Education: M.Sc. Software Testing (2016) and B.E. Computer Engineering (2014).</p>
+</div></section>
+
+<footer id="contact"><div class="wrap">
+<h2>Let’s talk about your Salesforce org.</h2>
+<div class="btns"><a class="btn p" href="mailto:hrathod4003@gmail.com">hrathod4003@gmail.com</a><a class="btn s" href="tel:+16473033093">647-303-3093</a><a class="btn s" href="https://linkedin.com/in/heena-rathod">linkedin.com/in/heena-rathod</a></div>
+<p style="color:var(--muted)">Toronto, Ontario</p>
+</div></footer>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+// theme
+$('theme').onclick=function(){var r=document.documentElement,d=matchMedia('(prefers-color-scheme:dark)').matches;var cur=r.getAttribute('data-theme')||(d?'dark':'light');r.setAttribute('data-theme',cur==='dark'?'light':'dark')};
+// approval demo
+var amt=$('amt'),dis=$('dis');
+function fmt(n){return '$'+n.toLocaleString('en-CA')}
+function run(){
+var a=+amt.value,d=+dis.value;$('amtO').textContent=fmt(a);$('disO').textContent=d+'%';
+var steps=[];
+if(d>10)steps.push('Sales Manager');
+if(d>20)steps.push('Finance');
+if(d>30||a>250000)steps.push('VP Sales');
+var c=$('chain');c.innerHTML='';
+function add(t,cls){var s=document.createElement('span');s.className='step '+cls;s.textContent=t;c.appendChild(s)}
+function arr(){var s=document.createElement('span');s.className='arrow';s.textContent='›';c.appendChild(s)}
+add('Quote submitted','ok');
+if(!steps.length){arr();add('Auto-approved','ok');$('verdict').textContent='Discount is within the standard range, so no approval is needed and the quote goes straight to DocuSign.';}
+else{steps.forEach(function(s){arr();add(s,'on')});arr();add('DocuSign','');
+$('verdict').textContent=steps.length+' approval'+(steps.length>1?'s':'')+' needed before the quote can be sent. Each approver is notified by email alert and can approve in Salesforce.';}
+}
+amt.oninput=dis.oninput=run;run();
+// role fit
+var skills={
+'Flow':['flow','flow builder','orchestration'],'Apex':['apex'],'LWC':['lwc','lightning web','lightning component'],'SOQL':['soql'],
+'CPQ':['cpq','steelbrick','quote-to-cash','quote to cash'],'Sales Cloud':['sales cloud'],'Service Cloud':['service cloud'],
+'Copado':['copado'],'Salesforce DX':['sfdx','salesforce dx'],'CI/CD':['ci/cd','devops','release management'],'Git':['git','github'],
+'Data migration':['data migration','data loader','etl','migration'],'Reports and dashboards':['dashboard','reports','reporting'],
+'Security and access':['permission set','profiles','sharing rule','security','roles'],'Approval processes':['approval'],
+'Integrations':['integration','rest api','soap','api'],'DocuSign':['docusign'],'Gong':['gong'],'Outreach':['outreach'],'ZoomInfo':['zoominfo'],
+'Salesforce Connect':['salesforce connect'],'Data Cloud':['data cloud'],'Einstein Analytics':['einstein','crm analytics','tableau crm'],
+'Visualforce':['visualforce'],'Jira':['jira'],'Agile':['agile','scrum'],'UAT and testing':['uat','testing','qa'],
+'Requirements gathering':['requirements','stakeholder','business analyst'],'User training':['training','documentation','adoption'],
+'Administrator cert':['certified administrator','admin certification'],'Platform Developer I':['platform developer'],'Revenue Cloud':['revenue cloud','revenue management']};
+function fit(){
+var t=$('jd').value.toLowerCase(),chips=$('chips');chips.innerHTML='';
+if(!t.trim()){$('score').textContent='Paste a posting to see the match.';$('barfill').style.width='0';return}
+var asked=[],hit=0;
+Object.keys(skills).forEach(function(k){
+var inJD=skills[k].some(function(w){return t.indexOf(w)>-1});
+if(inJD){asked.push(k);hit++;var s=document.createElement('span');s.className='chip hit';s.textContent=k;chips.appendChild(s)}});
+$('barfill').style.width=Math.min(100,asked.length*7)+'%';
+$('score').textContent=asked.length?asked.length+' skills in this posting appear in my résumé.':'No direct keyword matches. Email me and I’ll tell you how my experience maps.';
+}
+$('jd').oninput=fit;
+})();
+</script>
+</body>
+</html>
